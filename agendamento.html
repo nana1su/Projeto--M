@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Agendamento - A Casa
+        </title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Roboto+Slab:wght@200;300&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+    <div class="caixa">
+        <h1><img src="logo-abelha.png" alt="Abelha em preto e branco"> </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="produtos.html"> Produtos </a></li>
+                    <li><a href="agendamento.html"> Agendamento </a></li>
+                </ul>
+            </nav>
+    </div>
+        </header>
+        
+        <main>
+            <form>
+                <div class="input.container input.container--invalido">
+                <label for="nomesobrenome">Nome e Sobrenome </label>
+                <input type="text" id="nomesobrenome" class="input-padrao" placeholder="Nome e Sobrenome" data-tipo="nomesobrenome" required >
+                
+                </div>
+
+                <label for="datadenascimento">Data de Nascimento</label>
+                <input type="date" name="nascimento" id="nascimento" placeholder="Data de Nascimento" data-tipo="dataNascimento" required>
+                
+
+                <label for="email">E-mail</label>
+                <input type="email" onblur = "validarEmail()" onfocus = "redefinirMsg()" id="email" class="input-padrao" placeholder="E-mail" data-tipo="email"required>
+                <span id = "error-email"> </span>
+                
+                <label for="telefone">Telefone </label>
+                <input type="tel" id="telefone" class="input-padrao" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" data-tipo="telefone"required>
+                
+                
+
+                <label for="mensagem">Mensagem </label>
+                <textarea cols="70" rows="10" id="mensagem" class="input-padrao" placeholder="Deixe a sua mensagem aqui!" required></textarea>
+            
+
+                <fieldset>
+                    <legend>Como prefere o nosso contato?</legend>
+                    <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">E-mail</label>
+                    
+                    <label for="radio-telefone"><input type="radio" name="contato" value="telefpne" id="radio-telefone">Telefone</label>
+                
+                    <label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>Whatsapp</label>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>Qual horário você prefere ser atendido?</legend>
+                        <select>
+                            <option> Manhã </option>
+                            <option> Tarde </option>
+                            <option> Noite </option>
+                        </select>
+                </fieldset>
+
+                <label class="checkbox"><input type="checkbox" checked> Gostaria de receber nossas novidades por e-mail?</label>
+                <input type="submit" class="enviar" onclick="Enviar();" value="Enviar Formulário" class="enviar">
+                
+                
+             </form>
+        </main>
+        <script src="./JS/app.js" type="module"></script>
+
+        <footer>
+            <img src="logo-abelha.png" alt="Abelha em preto e branco">
+            <p class="copyright">	
+                &copy; Copyright  Suzana - 2021 </p>
+        </footer>
+        </body>
+
+    </html>
